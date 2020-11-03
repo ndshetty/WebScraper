@@ -22,10 +22,16 @@
 #import sys
 
 import pandas as pd
+#import seaborn as sns
 #import csv
 
-url = 'https://www.basketball-reference.com/leagues/NBA_2019_per_game.html'
+url = 'https://en.wikipedia.org/wiki/History_of_Python'
 
-df = pd.read_html(url, header = 0)
-df
+dfs = pd.read_html(url)
+
+df = dfs[0]
+
+df2 = df[['Version', 'Release date']]
+
+print(df2)
 
